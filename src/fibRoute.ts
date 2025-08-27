@@ -14,7 +14,7 @@ export default (req: Req, res: Res): void => {
   if (!Number.isFinite(n)) {
     result = "fibonacci(?) is undefined";
   } else {
-    const fibN: number = fibonacci(n);
+    const fibN = (fibonacci as (k: number) => number)(n);
     result = fibN < 0
       ? `fibonacci(${n}) is undefined`
       : `fibonacci(${n}) is ${fibN}`;
